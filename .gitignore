@@ -1,0 +1,4 @@
+exec
+repl.log
+.env
+.chirpy_conf.json
