@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-
 	"github.com/AyuorusAguilar/chirpy/Internal/api"
 	"github.com/AyuorusAguilar/chirpy/Internal/state"
 	"github.com/AyuorusAguilar/chirpy/internal/database"
