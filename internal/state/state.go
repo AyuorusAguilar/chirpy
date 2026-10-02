@@ -13,6 +13,8 @@ type State struct {
 		Db *database.Queries
 		Platform string
 		fileserverHits atomic.Int32
+		Secret string
+		PKey string
 	}
 
 func (s *State) MdwareFileServerHitsBump(f http.Handler) http.Handler {
@@ -44,7 +46,7 @@ func (s *State) HandleReset(w http.ResponseWriter, r *http.Request) {
 	s.fileserverHits.Store(0)
 	s.Db.Reset(context.Background())
 	w.WriteHeader(200)
-	w.Write(fmt.Appendf(nil, "Metrics have been reset"))
+	w.Write(fmt.Appendf(nil, "	Metrics and database have been reset"))
 }
 
 func NewState(db *database.Queries) State {
